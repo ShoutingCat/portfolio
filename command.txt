@@ -1,0 +1,13 @@
+
+
+# 서버운영 관련
+python manage.py runserver
+python manage.py makemigrations
+python manage.py makemigrations <app_name>
+python manage.py migrate
+
+
+# 비밀번호 관련
+manage.py changepassword <user_name>
+python manage.py changepassword admin
+
