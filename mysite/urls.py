@@ -6,4 +6,5 @@ urlpatterns = [
 	url(r'^polls/', include('polls.urls')),
 	url(r'^books/', include('books.urls')),
 	url(r'^introduce/', include('introduce.urls')),
+	url(r'^', include('introduce.urls')),
 ]
