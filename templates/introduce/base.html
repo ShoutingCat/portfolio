@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <style type="text/css">
+        .UpperMenu {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .MenuLine {
+            background-color:darkgrey;
+            height: 1px;
+        }
+
+        .Outer{
+            margin-left:0;
+            margin-right:0;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .Max200{
+            max-width: 200px;
+        }
+
+    </style>
+
+    <title>{% block title %}This Web is created by using python! {% endblock %}</title>
+</head>
+
+<body style="max-width: 1200px;">
+    <div id="sidebar" class="Outer" style="margin:0px;" >
+        {% block sidebar %}
+        <div class="row" style="height:20px;"></div>
+
+        <div class="row">
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce">Home</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce/aboutme">AboutMe</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce/iswhat">IsWhat?</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/">Hobby</a></h5></div>
+        </div>
+        <div class="MenuLine">
+        </div>
+        <!--
+        <ul>
+            <li><a href="/">Project_Home</a></li>
+            <li><a href="admin/">Admin</a></li>
+        </ul>
+        -->
+        {% endblock %}
+    </div>
+    <div class="row" style="height:0px;"></div>
+
+    <div id="content" class="Content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
