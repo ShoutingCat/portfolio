@@ -6,9 +6,27 @@
 
     <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
     <style type="text/css">
+
+        body {
+            float: none; margin: 0 auto;
+        }
+
         .UpperMenu {
             cursor: pointer;
             text-align: center;
+        }
+
+
+        .UpperMenu a{
+            color: #1b1e21;
+        }
+
+        .UpperMenu a:hover{
+            color: #6c757d;
+        }
+
+        .UpperMenu a:-webkit-any-link{
+            text-decoration: none;
         }
 
         .MenuLine {
@@ -21,6 +39,8 @@
             margin-right:0;
             padding-left: 15px;
             padding-right: 15px;
+            padding-bottom: 25px;
+            max-width: 1200px;
         }
 
         .Max200{
@@ -33,15 +53,24 @@
 </head>
 
 <body style="max-width: 1200px; padding-bottom: 30px;">
-    <div id="sidebar" class="Outer" style="margin:0px;" >
+
+
+    <div class="col-1"></div>
+
+    <div class="col-1"></div>
+
+    <div id="sidebar" class="Outer col-10" style="margin:0px;" >
         {% block sidebar %}
         <div class="row" style="height:20px;"></div>
 
         <div class="row">
-            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce">Home</a></h5></div>
-            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce/aboutme">AboutMe</a></h5></div>
-            <div class="col-sm"><h5 class="UpperMenu"><a href="/introduce/iswhat">IsWhat?</a></h5></div>
-            <div class="col-sm"><h5 class="UpperMenu"><a href="/">Hobby</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/">Home</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/">Portfolio</a></h5></div>
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/aboutme">Me</a></h5></div>
+            <!-- Me 메뉴를 추후 Blog 메뉴로 대체하고, 해당 페이지는 새로 띄우기로 하자 -->
+            <!-- 세련된 스킨을 적용하자 -->
+            <div class="col-sm"><h5 class="UpperMenu"><a href="/iswhat">WebInfo</a></h5></div>
+
         </div>
         <div class="MenuLine">
         </div>
