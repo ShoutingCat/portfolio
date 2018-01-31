@@ -1,0 +1,45 @@
+{% extends "base_introduce.html" %}
+
+{% block content %}
+
+
+
+<!--<button type="button" class="btn btn-light">이전 포스트</button>-->
+<!--<button type="button" class="btn btn-light">다음 포스트</button>-->
+
+<div class="col-1"> </div>
+<div class="rounded col-10" >
+    &nbsp;
+    <div style="margin:0 30px 0 30px;">
+        <!--
+        style="background-color:#f8f9fa;"
+        -->
+        {% for post in object_list %}
+        <div style="padding:30px; background-color:#f8f9fa;" class=" rounded ">
+            <h2>{{ post.title }}</h2>
+            <div style="height:1px; background-color: #0c5460; max-width:600px;">&nbsp;</div>
+
+            <p class="date text-right">{{ post.modify_date|date:"Y 년 m월  d일  "}}</p>
+
+            <div class="body border" style="padding:10px">
+                {{ post.content|linebreaks}}
+            </div>
+
+            <!--<li>{{ post.modify_date|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;-->
+            <!--<a href="{{ post.get_absolute_url }}"><strong>-->
+            <!--{{ post.title }}-->
+            <!--</strong></a>-->
+            <!--</li>-->
+
+        </div>
+        <br />
+        {% endfor %}
+
+    </div>
+    &nbsp;
+</div>
+<div class="col-1"> </div>
+
+{% endblock content %}
+
+

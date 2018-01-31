@@ -3,8 +3,21 @@ from django.views.generic.dates import ArchiveIndexView, YearArchiveView, MonthA
 from django.views.generic.dates import DayArchiveView, TodayArchiveView
 
 from blog.models import Post
+from django.views.generic.base import TemplateView
 
-# Create your views here
+
+# TemplateView
+
+class IndexView(ListView):
+    model = Post
+    template_name = 'blog/post_index.html'
+    context_object_name = 'posts'
+    ordering = ['-create_date', ]
+    paginate_by = 2
+
+    # Create your views here
+
+
 
 class PostLV(ListView):
     model = Post

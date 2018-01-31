@@ -4,8 +4,9 @@ from blog.views import *
 
 app_name = 'blog'
 urlpatterns = [
-    # Example: /
-    url(r'^$', PostLV.as_view(), name='index'),
+    # Example:
+    url(r'^$', IndexView.as_view(), name='post_index'),
+    #url(r'^$', PostLV.as_view(), name='index'),
     url(r'^post/$', PostLV.as_view(), name='post_list'),
     url(r'^post/(?P<slug>[-\w]+)/$', PostDV.as_view(), name='post_detail'),
     url(r'^archive/$', PostAV.as_view(), name='post_archive'),
